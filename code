@@ -1,0 +1,24 @@
+//https://leetcode.com/problems/subsets/
+class Solution {
+public:
+    vector<vector<int>> subsets1;
+    void bk(vector<int>& subset,int i,vector<int>& nums){
+        if(i==nums.size()){
+            subsets1.push_back(subset);
+            return;
+        }
+        //do not include ith element
+        bk(subset,i+1,nums);
+        
+        //include ith element 
+        subset.push_back(nums[i]);
+        bk(subset,i+1,nums);
+        //pop back the added element so that prev function get the same elements that it send/gave/returned
+        subset.pop_back();
+    }
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<int>empty;
+        bk(empty,0,nums);
+        return subsets1;
+    }
+};
