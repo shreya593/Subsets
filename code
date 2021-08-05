@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/subsets/
+vedio: https://youtu.be/u0e29JIdxZU
 class Solution {
 public:
     vector<vector<int>> subsets1;
